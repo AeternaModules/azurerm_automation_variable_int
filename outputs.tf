@@ -1,3 +1,7 @@
+output "automation_variable_ints_id" {
+  description = "Map of id values across all automation_variable_ints, keyed the same as var.automation_variable_ints"
+  value       = { for k, v in azurerm_automation_variable_int.automation_variable_ints : k => v.id }
+}
 output "automation_variable_ints_automation_account_name" {
   description = "Map of automation_account_name values across all automation_variable_ints, keyed the same as var.automation_variable_ints"
   value       = { for k, v in azurerm_automation_variable_int.automation_variable_ints : k => v.automation_account_name }
